@@ -1,5 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HomeView from './views/HomeView.vue'
+</script>
+import HomeView from '@/views/HomeView'
 
 <template>
-  <h2>Leader board</h2>
+  <main>
+    <hi>Welcome</hi>
+    <HomeView />
+  </main>
 </template>
