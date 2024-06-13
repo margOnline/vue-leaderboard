@@ -1,10 +1,7 @@
-<script setup lang="ts">
-import { supabase } from '@/lib/supabaseClient'
-console.log(supabase)
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <main>
-    <hi>Welcome</hi>
+    <RouterView />
   </main>
 </template>
