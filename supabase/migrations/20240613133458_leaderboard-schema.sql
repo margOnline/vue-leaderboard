@@ -6,7 +6,7 @@ create type name as enum (
 create type current_status as enum (
   'not-started','draw-published','in-progress','semi-finals-completed','finished'
   );
-create type season_order as enum ('1','2','3','4');
+create type season_position as enum ('1','2','3','4');
 
 create table
   tournaments (
@@ -16,8 +16,8 @@ create table
     slug text unique not null,
     status current_status default 'not-started' not null,
     logo varchar not null,
-    start_date timestamptz not null,
-    end_date timestamptz not null,
-    season_order int2 not null,
+    start_date varchar not null,
+    end_date varchar not null,
+    season_position int2 not null,
     events varchar array default array[]::varchar[]
   );
