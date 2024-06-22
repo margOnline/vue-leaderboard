@@ -23,8 +23,6 @@ supabase
 
 <style scoped>
 .tournament {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #2d2b2b;
   margin-right: 50px;
 }
 </style>

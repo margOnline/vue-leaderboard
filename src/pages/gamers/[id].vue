@@ -1,37 +1,24 @@
 <script setup lang="ts">
-// import { useRoute } from 'vue-router'
-// import { supabase } from '../../lib/supabaseClient'
-// import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+import { ref } from 'vue'
+import { supabase } from '@/lib/supabaseClient'
 
-// const route = useRoute()
-// let data: any | null
-// const gamerId = route.params?.id
-const gamer = {
-  firstname: 'Jane',
-  lastname: 'Doe',
-  email: 'janedoe@gmail.com',
-  website: 'janedoe.co.uk'
-}
-// data = await supabase.from('gamers').select().eq('id', gamerId)
-
-// const gamer = data.data[0]
-// console.log(gamer)
+const gamers = ref()
+const route = useRoute()
+const gamerId = route.params?.id
+supabase
+  .from('gamers')
+  .select()
+  .eq('id', gamerId)
+  .then((res) => {
+    const data = res.data
+    gamers.value = data
+  })
 </script>
 
 <template>
-  <div v-if="gamer" class="profile-card">
-    <p class="title">{{ gamer.firstname }}</p>
-    <p class="text-lead">{{ gamer.lastname }}</p>
-    <p class="text-justify">No bio specified</p>
-    <span class="online">{{ gamer.firstname }} is online</span>
-
-    <hr />
-    <p v-if="gamer.website" class="text-large text-center">
-      <i class="fa fa-globe"></i>
-      <a :href="gamer.website">{{ gamer.website }}</a>
-    </p>
+  <div v-for="gamer in gamers" :key="gamer.id" class="profile-card">
+    <p class="title">{{ gamer.username }}</p>
+    <p class="text-lead">{{ gamer.email }}</p>
   </div>
-  <div v-else>No gamer matches that id</div>
 </template>
-
-<style scoped></style>
