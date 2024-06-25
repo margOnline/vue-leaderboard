@@ -5,8 +5,8 @@ create table
   players (
     id bigint primary key generated always as identity not null,
     created_at timestamptz default now() not null,
-    firstName text not null,
-    lastName text not null,
+    firstname text not null,
+    lastname text not null,
     gender gender not null,
     country text not null,
     dob varchar not null,
