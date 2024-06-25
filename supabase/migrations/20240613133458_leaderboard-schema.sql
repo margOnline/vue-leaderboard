@@ -12,12 +12,12 @@ create table
   tournaments (
     id bigint primary key generated always as identity not null,
     created_at timestamptz default now() not null,
-    name text not null,
+    name name not null,
     slug text unique not null,
     status current_status default 'not-started' not null,
     logo varchar not null,
     start_date varchar not null,
     end_date varchar not null,
-    season_position int2 not null,
+    season_position season_position not null,
     events varchar array default array[]::varchar[]
   );

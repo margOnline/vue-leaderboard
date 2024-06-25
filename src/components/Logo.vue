@@ -7,8 +7,12 @@ const imageURL = image.data.publicUrl
 </script>
 
 <template>
-  <div>
+  <div class="logo">
     <img :src="imageURL" :alt="imageAltTag" height="50px" width="50px" />
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+.logo {
+  margin: auto;
+}
+</style>
