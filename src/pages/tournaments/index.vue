@@ -19,17 +19,22 @@ supabase
 
 <template>
   <div v-for="tournament in storedTournaments" :key="tournament.name" class="tournament">
-    <p>{{ tournament.name }}</p>
+    <h3>{{ tournament.name }}</h3>
     <Logo :imageFileName="tournament.logo" :tournamentName="tournament.name" />
-  </div>
-  <div class="results">
-    <ResultCard :title="'Men'" :playerIds="menPlayerIds" />
-    <ResultCard :title="'Women'" :playerIds="womenPlayerIds" />
+
+    <div class="results">
+      <ResultCard :title="'Men'" :playerIds="menPlayerIds" />
+      <ResultCard :title="'Women'" :playerIds="womenPlayerIds" />
+    </div>
   </div>
 </template>
 
 <style scoped>
+.main {
+  display: flex;
+  justify-content: center;
+}
 .tournament {
-  margin-right: 50px;
+  text-align: center;
 }
 </style>
