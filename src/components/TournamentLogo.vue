@@ -8,11 +8,15 @@ const imageURL = image.data.publicUrl
 
 <template>
   <div class="logo">
-    <img :src="imageURL" :alt="imageAltTag" height="50px" width="50px" />
+    <img :src="imageURL" :alt="imageAltTag" />
   </div>
 </template>
 <style scoped>
 .logo {
   margin: auto;
+}
+.logo img {
+  width: auto;
+  max-height: 50px;
 }
 </style>

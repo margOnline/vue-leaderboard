@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { supabase } from '@/lib/supabaseClient'
 import { ref } from 'vue'
-import Logo from '@/components/Logo.vue'
+import TournamentLogo from '@/components/TournamentLogo.vue'
 import ResultCard from '@/components/ResultCard.vue'
 
 const storedTournaments = ref()
@@ -20,8 +20,7 @@ const womenPlayerIds = [5, 6, 7, 8]
   <div class="tournament-container">
     <div v-for="tournament in storedTournaments" :key="tournament.name" class="tournament">
       <h3>{{ tournament.name }}</h3>
-      <Logo :imageFileName="tournament.logo" :tournamentName="tournament.name" />
-
+      <TournamentLogo :imageFileName="tournament.logo" :tournamentName="tournament.name" />
       <div class="results">
         <ResultCard :title="'Men'" :playerIds="menPlayerIds" />
         <ResultCard :title="'Women'" :playerIds="womenPlayerIds" />
