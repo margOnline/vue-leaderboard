@@ -1,29 +1,21 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { supabase } from '../lib/supabaseClient'
+import { computed } from 'vue'
 const props = defineProps<{
-  playerId: number
+  player: {
+    firstname: string
+    lastname: string
+  }
 }>()
 const seed: (string | number)[] = [...Array(32).keys(), 'unseeded']
 const result = ['1R', '2R', '3R', '4R', 'QF', 'SF', 'F', 'W']
 const seeding = computed(() => {
   return seed[Math.floor(Math.random() * 32 + 1)]
 })
-
-const players = ref()
-supabase
-  .from('players')
-  .select()
-  .eq('id', props.playerId)
-  .then((res) => {
-    const data = res.data
-    players.value = data
-  })
 </script>
 
 <template>
-  <tr v-for="player in players" :key="player.id">
-    <td>{{ player.firstname }} {{ player.lastname }}</td>
+  <tr>
+    <td>{{ props.player.firstname }} {{ props.player.lastname }}</td>
     <td class="right-align">{{ seeding }}</td>
     <td class="right-align">{{ result[3] }}</td>
     <hr />
