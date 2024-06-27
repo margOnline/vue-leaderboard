@@ -17,22 +17,29 @@ const womenPlayerIds = [5, 6, 7, 8]
 </script>
 
 <template>
-  <div v-for="tournament in storedTournaments" :key="tournament.name" class="tournament">
-    <h3>{{ tournament.name }}</h3>
-    <Logo :imageFileName="tournament.logo" :tournamentName="tournament.name" />
+  <div class="tournament-container">
+    <div v-for="tournament in storedTournaments" :key="tournament.name" class="tournament">
+      <h3>{{ tournament.name }}</h3>
+      <Logo :imageFileName="tournament.logo" :tournamentName="tournament.name" />
 
-    <div class="results">
-      <ResultCard :title="'Men'" :playerIds="menPlayerIds" />
-      <ResultCard :title="'Women'" :playerIds="womenPlayerIds" />
+      <div class="results">
+        <ResultCard :title="'Men'" :playerIds="menPlayerIds" />
+        <ResultCard :title="'Women'" :playerIds="womenPlayerIds" />
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.main {
-  column-count: 4;
-  column-gap: 10%;
-  border: 1px solid green;
+.tournament-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2d2b2b;
+  column-gap: 20px;
 }
 .tournament {
   text-align: center;
