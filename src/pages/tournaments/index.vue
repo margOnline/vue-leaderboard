@@ -8,13 +8,12 @@ const storedTournaments = ref()
 const menPlayerIds = [1, 2, 3, 4]
 const womenPlayerIds = [5, 6, 7, 8]
 
-supabase
-  .from('tournaments')
-  .select()
-  .then((res) => {
-    const data = res.data
-    storedTournaments.value = data
-  })
+;(async () => {
+  const { data, error } = await supabase.from('tournaments').select()
+  if (error) console.error(error)
+
+  storedTournaments.value = data
+})()
 </script>
 
 <template>
@@ -31,8 +30,9 @@ supabase
 
 <style scoped>
 .main {
-  display: flex;
-  justify-content: center;
+  column-count: 4;
+  column-gap: 10%;
+  border: 1px solid green;
 }
 .tournament {
   text-align: center;
