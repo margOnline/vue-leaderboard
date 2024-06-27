@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="main-container">
-    <h1>Home Page</h1>
+  <div>
+    <h2>App Logo</h2>
   </div>
 </template>
 

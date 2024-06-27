@@ -1,19 +1,35 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AppSidebar from '@/components/AppSidebar.vue'
+import AppNavbar from '@/components/AppNavbar.vue'
+</script>
 
 <template>
   <main>
-    <RouterView />
+    <div class="main-container">
+      <AppSidebar />
+      <div class="main-content">
+        <AppNavbar />
+        <RouterView />
+      </div>
+    </div>
   </main>
 </template>
 
-<style scoped>
+<style>
+body {
+  margin: 0;
+}
 main {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main-container {
+  margin-top: 0;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  margin-top: 3rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #2d2b2b;
+}
+.main-content {
+  margin-top: 0;
 }
 </style>
