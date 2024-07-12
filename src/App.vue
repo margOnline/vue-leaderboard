@@ -17,6 +17,7 @@ import AppNavbar from '@/components/AppNavbar.vue'
 
 <style>
 body {
+  height: 100vh;
   margin: 0;
 }
 main {

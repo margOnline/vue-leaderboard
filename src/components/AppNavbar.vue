@@ -48,6 +48,8 @@ import router from '@/router'
       text-transform: uppercase;
       border-radius: 15px;
       padding: 5px 10px;
+      color: white;
+      background: #98bc2b;
     }
   }
 
