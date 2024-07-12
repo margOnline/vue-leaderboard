@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useForm } from 'vee-validate'
 import * as yup from 'yup'
 import { supabase } from '@/lib/supabaseClient'
@@ -14,25 +15,34 @@ const { values, errors, defineField, meta, handleSubmit } = useForm({
 const [username, usernameAttrs] = defineField('username')
 const [email, emailAttrs] = defineField('email')
 const [password, passwordAttrs] = defineField('password')
+const dbError = ref()
 
 const onSubmit = handleSubmit(async (values) => {
-  const { data, error } = await supabase
-    .from('gamers')
-    .insert({
-      username: values.username,
-      email: values.email,
-      password: values.password
-    })
-    .select()
+  try {
+    const { data, error } = await supabase
+      .from('gamers')
+      .insert({
+        username: values.username,
+        email: values.email,
+        password: values.password
+      })
+      .select()
 
-  if (!error) {
-    router.push({ path: `/gamers/${data[0].id}` })
+    if (error) throw error
+    else {
+      router.push({ path: `/gamers/${data[0].id}` })
+    }
+  } catch (error) {
+    if (error.code === '23505') dbError.value = 'This email address is not available'
+    else {
+      dbError.value = error.details
+    }
   }
 })
 </script>
 
 <template>
-  <form @submit="onSubmit">
+  <form @submit="onSubmit" class="form-container">
     <div class="form-field">
       <label class="form-label" for="username">Username</label>
       <input class="form-input" v-model="username" v-bind="usernameAttrs" />
@@ -41,7 +51,9 @@ const onSubmit = handleSubmit(async (values) => {
     <div class="form-field">
       <label class="form-label" for="name">Email</label>
       <input class="form-input" v-model="email" v-bind="emailAttrs" />
-      <div v-if="errors.email && meta.touched" class="error">{{ errors.email }}</div>
+      <div v-if="(errors.email || dbError) && meta.touched" class="error">
+        {{ errors.email || dbError }}
+      </div>
     </div>
     <div class="form-field">
       <label class="form-label" for="name">Password</label>
@@ -53,8 +65,15 @@ const onSubmit = handleSubmit(async (values) => {
 </template>
 
 <style scoped>
+.form-container {
+  background-color: #d3f8e6;
+  border: 1px solid #5db67e;
+  padding: 20px;
+  margin-right: 20px;
+}
 .form-field {
   margin-bottom: 15px;
+  display: grid;
 }
 .form-label {
   margin-right: 10px;
@@ -66,5 +85,15 @@ const onSubmit = handleSubmit(async (values) => {
 }
 .error {
   color: rgb(109, 41, 41);
+}
+button {
+  color: #5db67e;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid #5db67e;
+  padding: 5px 10px;
+  font-size: 9px;
+  text-align: center;
+  text-transform: uppercase;
 }
 </style>

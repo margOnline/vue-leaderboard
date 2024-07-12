@@ -1,10 +1,10 @@
 insert into gamers
-  (firstname, lastname, email)
+  (username, email, password)
 values
-  ('Milo', 'Canning','milo@gmail.com'),
-  ('Charlotte', 'Kulig', 'charlotte@gmail.com'),
-  ('James', 'Hartnett', 'james@gmail.com'),
-  ('George', 'Verville','george@gmail.com');
+  ('milo','milo@gmail.com', 'password'),
+  ('charlotte', 'charlotte@gmail.com', 'password'),
+  ('james', 'james@gmail.com', 'password'),
+  ('freddie','freddie@gmail.com', 'password');
 
 insert into tournaments
   (name, slug, logo, start_date, end_date, season_position)
