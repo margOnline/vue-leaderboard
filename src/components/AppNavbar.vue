@@ -9,8 +9,8 @@ import router from '@/router'
       <li class="nav__item">Current tournament</li>
       <li class="nav__item">Next tournament</li>
       <li class="nav__item">Rules</li>
-      <li class="nav__item"><button @click="router.push('/signUp')">Sign up</button></li>
     </ul>
+    <button @click="router.push('/signUp')">Sign up</button>
   </div>
 </template>
 
@@ -19,13 +19,15 @@ import router from '@/router'
   background-color: #f7f7f7;
   overflow: hidden;
   margin-right: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .nav {
   padding: 5px 0;
   color: #5db67e;
   font-size: 10px;
   margin-left: 10px;
-
   li {
     display: inline;
     list-style-type: none;
@@ -44,17 +46,17 @@ import router from '@/router'
       text-decoration: none;
       color: #575a59;
     }
-    button {
-      text-transform: uppercase;
-      border-radius: 15px;
-      padding: 5px 10px;
-      color: white;
-      background: #98bc2b;
-    }
   }
-
-  .nav__item:last-child {
-    align-items: right;
-  }
+}
+button {
+  color: white;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin-right: 30px;
+  border: 1px #34dbeb;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #13b56f, #34dbeb);
+  vertical-align: middle;
 }
 </style>
