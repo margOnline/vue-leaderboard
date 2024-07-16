@@ -66,6 +66,7 @@ const onSubmit = handleSubmit(async (values) => {
 
 <style scoped>
 .form-container {
+  color: #575a59;
   width: 30%;
   background-color: #d3f8e6;
   border: 1px solid #5db67e;

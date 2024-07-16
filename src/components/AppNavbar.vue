@@ -6,9 +6,11 @@ import router from '@/router'
   <div class="navbar-container">
     <ul class="nav">
       <li class="nav__item"><RouterLink :to="{ name: '/results' }">Results</RouterLink></li>
-      <li class="nav__item">Current tournament</li>
-      <li class="nav__item">Next tournament</li>
-      <li class="nav__item">Rules</li>
+      <li class="nav__item">
+        <RouterLink :to="{ name: '/' }">Current tournament</RouterLink>
+      </li>
+      <li class="nav__item"><RouterLink :to="{ name: '/' }">Next tournament</RouterLink></li>
+      <li class="nav__item"><RouterLink :to="{ name: '/' }">Rules</RouterLink></li>
     </ul>
     <button @click="router.push('/signUp')">Sign up</button>
   </div>
@@ -25,7 +27,6 @@ import router from '@/router'
 }
 .nav {
   padding: 5px 0;
-  color: #5db67e;
   font-size: 10px;
   margin-left: 10px;
   li {
@@ -35,7 +36,6 @@ import router from '@/router'
     padding-left: 10px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #575a59;
     padding: 0 10px;
     background-position: left center;
     :hover,
@@ -43,8 +43,8 @@ import router from '@/router'
       color: #13b56f;
     }
     a {
+      color: #969696;
       text-decoration: none;
-      color: #575a59;
     }
   }
 }
