@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <h2>App Logo</h2>
+    <img src="./../assets/images/logo.gif" />
   </div>
 </template>
 
