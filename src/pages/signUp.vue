@@ -32,7 +32,7 @@ const onSubmit = handleSubmit(async (values) => {
     else {
       router.push({ path: `/gamers/${data[0].id}` })
     }
-  } catch (error) {
+  } catch (error: any) {
     if (error.code === '23505') dbError.value = 'This email address is not available'
     else {
       dbError.value = error.details
@@ -66,6 +66,8 @@ const onSubmit = handleSubmit(async (values) => {
 
 <style scoped>
 .form-container {
+  color: #575a59;
+  width: 30%;
   background-color: #d3f8e6;
   border: 1px solid #5db67e;
   padding: 20px;
@@ -80,8 +82,9 @@ const onSubmit = handleSubmit(async (values) => {
 }
 .form-input {
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px;
+  border: 2px solid #ededed;
 }
 .error {
   color: rgb(109, 41, 41);
@@ -91,7 +94,7 @@ button {
   background-color: white;
   border-radius: 15px;
   border: 1px solid #5db67e;
-  padding: 5px 10px;
+  padding: 5px 15px;
   font-size: 9px;
   text-align: center;
   text-transform: uppercase;
