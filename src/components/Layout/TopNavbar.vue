@@ -1,16 +1,31 @@
 <script setup lang="ts">
 import router from '@/router'
+import TopNavbarLinks from './TopNavbarLinks.vue'
+
+const links = [
+  {
+    title: 'Results',
+    to: '/results'
+  },
+  {
+    title: 'Current tournament',
+    to: '/'
+  },
+  {
+    title: 'Next tournament',
+    to: '/'
+  },
+  {
+    title: 'Rules',
+    to: '/'
+  }
+]
 </script>
 
 <template>
   <nav class="h-16 border-b bg-muted/40 flex gap-2 justify-between px-6 items-center">
     <ul class="nav">
-      <li class="nav__item"><RouterLink :to="{ name: '/results' }">Results</RouterLink></li>
-      <li class="nav__item">
-        <RouterLink :to="{ name: '/' }">Current tournament</RouterLink>
-      </li>
-      <li class="nav__item"><RouterLink :to="{ name: '/' }">Next tournament</RouterLink></li>
-      <li class="nav__item"><RouterLink :to="{ name: '/' }">Rules</RouterLink></li>
+      <TopNavbarLinks :links="links" />
     </ul>
     <button @click="router.push('/signUp')">Sign up</button>
   </nav>
@@ -21,24 +36,6 @@ import router from '@/router'
   padding: 5px 0;
   font-size: 10px;
   margin-left: 10px;
-  li {
-    display: inline;
-    list-style-type: none;
-    border: none;
-    padding-left: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 0 10px;
-    background-position: left center;
-    :hover,
-    :active {
-      color: #13b56f;
-    }
-    a {
-      color: #969696;
-      text-decoration: none;
-    }
-  }
 }
 button {
   color: white;
