@@ -9,15 +9,15 @@ const links = [
   },
   {
     title: 'Current tournament',
-    to: '/'
+    to: '/current'
   },
   {
     title: 'Next tournament',
-    to: '/'
+    to: '/next'
   },
   {
     title: 'Rules',
-    to: '/'
+    to: '/rules'
   }
 ]
 </script>
