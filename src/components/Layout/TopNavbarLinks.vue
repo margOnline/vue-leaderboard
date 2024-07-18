@@ -18,6 +18,7 @@ defineProps<{
 <style scoped>
 li {
   display: inline;
+  color: #969696;
   list-style-type: none;
   border: none;
   padding-left: 10px;
@@ -25,13 +26,11 @@ li {
   font-weight: bold;
   padding: 0 10px;
   background-position: left center;
-  :hover,
-  :active {
+  :hover {
     color: #13b56f;
   }
-  a {
-    color: #969696;
-    text-decoration: none;
-  }
+}
+.router-link-active {
+  color: #13b56f;
 }
 </style>
