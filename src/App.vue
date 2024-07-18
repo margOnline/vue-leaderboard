@@ -1,27 +1,19 @@
 <script setup lang="ts">
-import AppSidebar from '@/components/AppSidebar.vue'
-import AppNavbar from '@/components/AppNavbar.vue'
+import Sidebar from './components/Layout/Sidebar.vue'
+import TopNavbar from './components/Layout/TopNavbar.vue'
 </script>
 
 <template>
-  <main class="main-container">
-    <AppSidebar />
-    <div class="main-content">
-      <AppNavbar />
+  <Sidebar />
+  <div class="flex flex-col lg:ml-52 ml-16 transition-[margin]">
+    <TopNavbar />
+    <main>
       <RouterView />
-    </div>
-  </main>
+    </main>
+  </div>
 </template>
 
 <style>
-body {
-  height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.main-container {
-  display: flex;
-  align-items: center;
-}
 .main-content {
   width: 100%;
   max-width: 960px;

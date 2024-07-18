@@ -3,7 +3,7 @@ import router from '@/router'
 </script>
 
 <template>
-  <div class="navbar-container">
+  <nav class="h-16 border-b bg-muted/40 flex gap-2 justify-between px-6 items-center">
     <ul class="nav">
       <li class="nav__item"><RouterLink :to="{ name: '/results' }">Results</RouterLink></li>
       <li class="nav__item">
@@ -13,17 +13,10 @@ import router from '@/router'
       <li class="nav__item"><RouterLink :to="{ name: '/' }">Rules</RouterLink></li>
     </ul>
     <button @click="router.push('/signUp')">Sign up</button>
-  </div>
+  </nav>
 </template>
 
 <style scoped>
-.navbar-container {
-  background-color: #f7f7f7;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .nav {
   padding: 5px 0;
   font-size: 10px;
