@@ -1,9 +1,16 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
+  <div class="leaderboard-container border-t">
     <h2>Leaderboard</h2>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.leaderboard-container {
+  margin-top: 30px;
+}
+h2 {
+  margin-top: 15px;
+}
+</style>
