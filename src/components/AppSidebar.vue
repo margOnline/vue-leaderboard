@@ -14,10 +14,9 @@ import Leaderboard from '@/components/Leaderboard.vue'
 
 <style scoped>
 .sidebar-container {
+  height: 100vh;
   background-color: #f7f7f7;
   width: 300px;
   border-right: 1px solid #ededed;
-  margin-right: 10px;
-  min-height: 100%;
 }
 </style>

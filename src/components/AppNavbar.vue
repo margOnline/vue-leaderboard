@@ -20,7 +20,6 @@ import router from '@/router'
 .navbar-container {
   background-color: #f7f7f7;
   overflow: hidden;
-  margin-right: -10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
