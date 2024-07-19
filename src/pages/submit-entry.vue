@@ -1,4 +1,5 @@
 <script setup lang="ts">
+<<<<<<< HEAD
 import PageTitle from '@/components/PageTitle.vue'
 import { useIsFormValid } from 'vee-validate'
 import { ref } from 'vue'
@@ -114,3 +115,18 @@ button {
   text-transform: uppercase;
 }
 </style>
+=======
+import { ref } from 'vue'
+</script>
+
+<template>
+  <div class="submit-entry-container">
+    <div class="flex flex col gap-2 ml-5 mt-5">
+      <img src="../assets/images/icons/submit.svg" />
+      <h2 class="text-2xl">Submit Entry</h2>
+    </div>
+
+    <div class="submit-entry-form-container"></div>
+  </div>
+</template>
+>>>>>>> ff50376 (Initial page for submitting an entry)
