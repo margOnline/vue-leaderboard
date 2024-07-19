@@ -1,5 +1,4 @@
 <script setup lang="ts">
-<<<<<<< HEAD
 import PageTitle from '@/components/PageTitle.vue'
 import { useIsFormValid } from 'vee-validate'
 import { ref } from 'vue'
@@ -24,10 +23,10 @@ const onSubmit = () => {
   <div>
     <PageTitle :iconFile="'submit.svg'" :title="'Submit Entry'" />
     <div class="flex gap-4 pl-5">
-      <div class="w-2/3 p-4 rounded-sm bg-paleGreen border-solid border-paleGrey">
+      <div class="w-2/3 mt-5 p-4 rounded-sm bg-paleGreen border-solid border-paleGrey">
         <form @submit="onSubmit" class="flex">
           <div class="w-1/2">
-            <h4 class="font-bold text-sm">Women</h4>
+            <h3>Women</h3>
             <div class="form-field">
               <label class="form-label" :for="femalePlayer1">1.</label>
               <input type="text" v-model="femalePlayer1" />
@@ -46,7 +45,7 @@ const onSubmit = () => {
             </div>
           </div>
           <div class="w-1/2">
-            <h4 class="font-bold text-sm">Men</h4>
+            <h3>Men</h3>
             <div class="form-field">
               <label class="form-label" :for="malePlayer1">1.</label>
               <input type="text" v-model="malePlayer1" />
@@ -57,7 +56,7 @@ const onSubmit = () => {
             </div>
             <div class="form-field">
               <label class="form-label" :for="malePlayer3">3.</label>
-              <input class="selection:border-gray-400" type="text" v-model="malePlayer3" />
+              <input type="text" v-model="malePlayer3" />
             </div>
             <div class="form-field">
               <label class="form-label" :for="malePlayer4">4.</label>
@@ -95,11 +94,8 @@ input {
   border: 1px solid #ededed;
   border-radius: 5px;
   margin: 10px 10px;
-  font-size: 16px;
-  width: 80%;
-}
-input:focus {
-  outline: 1px solid #969696;
+  font-size: 20px;
+  width: 90%;
 }
 button {
   float: right;
@@ -115,18 +111,3 @@ button {
   text-transform: uppercase;
 }
 </style>
-=======
-import { ref } from 'vue'
-</script>
-
-<template>
-  <div class="submit-entry-container">
-    <div class="flex flex col gap-2 ml-5 mt-5">
-      <img src="../assets/images/icons/submit.svg" />
-      <h2 class="text-2xl">Submit Entry</h2>
-    </div>
-
-    <div class="submit-entry-form-container"></div>
-  </div>
-</template>
->>>>>>> ff50376 (Initial page for submitting an entry)
