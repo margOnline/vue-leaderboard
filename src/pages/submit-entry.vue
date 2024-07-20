@@ -23,10 +23,10 @@ const onSubmit = () => {
   <div>
     <PageTitle :iconFile="'submit.svg'" :title="'Submit Entry'" />
     <div class="flex gap-4 pl-5">
-      <div class="w-2/3 mt-5 p-4 rounded-sm bg-paleGreen border-solid border-paleGrey">
+      <div class="w-2/3 p-4 rounded-sm bg-paleGreen border-solid border-paleGrey">
         <form @submit="onSubmit" class="flex">
           <div class="w-1/2">
-            <h3>Women</h3>
+            <h4 class="font-bold text-sm">Women</h4>
             <div class="form-field">
               <label class="form-label" :for="femalePlayer1">1.</label>
               <input type="text" v-model="femalePlayer1" />
@@ -45,7 +45,7 @@ const onSubmit = () => {
             </div>
           </div>
           <div class="w-1/2">
-            <h3>Men</h3>
+            <h4 class="font-bold text-sm">Men</h4>
             <div class="form-field">
               <label class="form-label" :for="malePlayer1">1.</label>
               <input type="text" v-model="malePlayer1" />
@@ -56,7 +56,7 @@ const onSubmit = () => {
             </div>
             <div class="form-field">
               <label class="form-label" :for="malePlayer3">3.</label>
-              <input type="text" v-model="malePlayer3" />
+              <input class="selection:border-gray-400" type="text" v-model="malePlayer3" />
             </div>
             <div class="form-field">
               <label class="form-label" :for="malePlayer4">4.</label>
@@ -94,8 +94,11 @@ input {
   border: 1px solid #ededed;
   border-radius: 5px;
   margin: 10px 10px;
-  font-size: 20px;
-  width: 90%;
+  font-size: 16px;
+  width: 80%;
+}
+input:focus {
+  outline: 1px solid #969696;
 }
 button {
   float: right;
