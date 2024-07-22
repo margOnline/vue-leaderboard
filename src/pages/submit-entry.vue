@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import PageTitle from '@/components/PageTitle.vue'
-import { useIsFormValid } from 'vee-validate'
+import SeededPlayersPanel from '@/components/SeededPlayersPanel.vue'
 import { ref } from 'vue'
 
 const femalePlayer1 = ref()
@@ -23,7 +23,7 @@ const onSubmit = () => {
   <div>
     <PageTitle :iconFile="'submit.svg'" :title="'Submit Entry'" />
     <div class="flex gap-4 pl-5">
-      <div class="w-2/3 p-4 rounded-sm bg-paleGreen border-solid border-paleGrey">
+      <div class="w-2/3 p-4 rounded-sm bg-paleGreen border border-solid border-green">
         <form @submit="onSubmit" class="flex">
           <div class="w-1/2">
             <h4 class="font-bold text-sm">Women</h4>
@@ -66,24 +66,8 @@ const onSubmit = () => {
           </div>
         </form>
       </div>
-      <div class="w-1/3 bg-paleGrey">
-        <h3>Seeded Players</h3>
-        <div class="form-field">
-          <label class="form-label" :for="femalePlayer1">1.</label>
-          <input type="text" v-model="femalePlayer1" />
-        </div>
-        <div class="form-field">
-          <label class="form-label" :for="femalePlayer2">2.</label>
-          <input type="text" v-model="femalePlayer2" />
-        </div>
-        <div class="form-field">
-          <label class="form-label" :for="femalePlayer3">3.</label>
-          <input type="text" v-model="femalePlayer3" />
-        </div>
-        <div class="form-field">
-          <label class="form-label" :for="femalePlayer4">4.</label>
-          <input type="text" v-model="femalePlayer4" />
-        </div>
+      <div class="mr-4 w-1/3 bg-paleGrey border border-solid border-grey">
+        <SeededPlayersPanel />
       </div>
     </div>
   </div>
