@@ -68,7 +68,7 @@ button {
   font-size: 10px;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 10px 30px;
+  padding: 10px 34px;
   margin-right: 30px;
   border: 1px #34dbeb;
   border-radius: 15px;

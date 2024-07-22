@@ -64,9 +64,9 @@ button {
   font-size: 10px;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 10px 30px;
+  padding: 10px 34px;
   border: 1px #34dbeb;
-  margin-left: 15px;
+  margin-left: 14px;
   border-radius: 15px;
   background: linear-gradient(90deg, #13b56f, #34dbeb);
   vertical-align: middle;
@@ -74,6 +74,6 @@ button {
 .button-icon {
   position: absolute;
   top: 13px;
-  right: 48px;
+  right: 28px;
 }
 </style>
