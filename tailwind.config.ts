@@ -1,11 +1,10 @@
-const animate = require('tailwindcss-animate')
+import type { Config } from 'tailwindcss'
+import animate from '@jcamp/tailwindcss-plugin-animate'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default <Partial<Config>>{
   darkMode: ['class'],
   safelist: ['dark'],
   prefix: '',
-
   content: [
     './pages/**/*.{ts,tsx,vue}',
     './components/**/*.{ts,tsx,vue}',
@@ -104,5 +103,5 @@ module.exports = {
       }
     }
   },
-  plugins: [animate]
+  plugins: [animate({})]
 }

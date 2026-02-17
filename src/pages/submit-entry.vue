@@ -97,4 +97,7 @@ button {
   text-align: center;
   text-transform: uppercase;
 }
+button:disabled {
+  cursor: not-allowed;
+}
 </style>
